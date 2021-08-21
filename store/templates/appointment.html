@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<title>Customer Service Signup Form Responsive Widget Template | Home :: w3layouts</title>   
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<meta name="keywords" content="Customer Service Signup Form Responsive, Login form web template, Sign up Web Templates, Flat Web Templates, Login signup Responsive web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<link href="{% static 'websign/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css" media="all">
+<link href="{% static 'websign/css/style.css' %}" rel="stylesheet" type="text/css" media="all"/>
+<link href="{% static 'websign/fonts.googleapis.com/css?family=Raleway:400,500,600,700,800,900' %}" rel="stylesheet">
+</head>
+<body>
+<div class="signupform">
+<h1> PLEASE SIGNUP YOUR ACCOUNT </h1>
+	<div class="container">
+		
+		<div class="agile_info">
+			<div class="w3l_form">
+				<img src="{% static 'websign/images/call-center-1015274_640.jpg' %}">
+			</div>
+			<div class="w3_info">
+				<h2> HOSPITAL MANAGMENT  </h2>
+						<form action="appointment.html" method="POST">
+							{% csrf_token %}
+							<br>
+						<div class="input-group">
+							<span><i class="fa fa-user" aria-hidden="true"></i></span>
+							<input type="text" name="firstname" placeholder="First Name"> 
+						</div>
+						<div class="input-group">
+							<span><i class="fa fa-user" aria-hidden="true"></i></span>
+							<input type="text" name="lastname" placeholder="Last Name"> 
+						</div>
+                        <div class="input-group">
+							<span><i class="fa fa-user" aria-hidden="true"></i></span>
+							<input type="text" name="address" placeholder="Address"> 
+						</div>
+                        <div class="input-group">
+							<span><i class="fa fa-user" aria-hidden="true"></i></span>
+							<input type="text" name="phone" placeholder="Phone"> 
+						</div>
+						<select style="border-radius: 5px;padding: 5px 30px;" name="product">
+                            {% for doctor in doctors %}
+                            <option value=" {{doctor.name}}{{doctor.id}} "> {{doctor.name}} </option>
+                            {% endfor %}
+                        </select>   
+							<button class="btn btn-danger btn-block" type="submit">Book Now</button >                 
+					</form>
+			</div>
+			<div class="clear"></div>
+			</div>
+			
+		</div>
+		<div class="footer">
+
+ <p>&copy; Customer Service Signup form 2018. All Rights Reserved | Design by <a href="https://w3layouts.com/" target="blank">W3layouts</a></p>
+ </div>
+	</div>
+	</body>
+</html>
